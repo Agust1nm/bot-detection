@@ -1,6 +1,6 @@
 # Dataset: Detección de Bots en Chat de Kick
 
-## 📋 Información General
+##  Información General
 
 - **Nombre del Dataset**: Kick Chat Bot Detection Dataset
 - **Versión**: 1.0
@@ -10,7 +10,7 @@
 
 ---
 
-## 📊 Descripción del Dataset
+##  Descripción del Dataset
 
 Este dataset contiene información de comportamiento de usuarios en la plataforma de streaming Kick, diseñado para entrenar modelos de aprendizaje automático capaces de distinguir entre usuarios humanos reales y bots automatizados.
 
@@ -27,7 +27,7 @@ Este dataset contiene información de comportamiento de usuarios en la plataform
 
 ---
 
-## 🔍 Descripción de Variables
+##  Descripción de Variables
 
 ### Variables Predictoras
 
@@ -98,7 +98,7 @@ Este dataset contiene información de comportamiento de usuarios en la plataform
 
 ---
 
-## 🎯 Origen y Metodología de Datos
+##  Origen y Metodología de Datos
 
 ### Tipo de Dataset
 
@@ -237,19 +237,3 @@ src/data/generate_dataset.py
 ```
 ---
 
-## 📄 Licencia
-
-Este dataset fue creado con fines académicos y educativos.
-
-**Uso Permitido**:
-- ✅ Investigación académica
-- ✅ Proyectos educativos
-- ✅ Desarrollo de prototipos
-- ✅ Publicaciones académicas (con citación)
-
-**Restricciones**:
-- ❌ Uso comercial sin autorización
-- ❌ Redistribución sin atribución
-- ❌ Aplicación directa en producción sin validación
-
-```
