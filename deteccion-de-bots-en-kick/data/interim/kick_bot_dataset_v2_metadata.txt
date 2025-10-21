@@ -1,10 +1,9 @@
-METADATA - KICK BOT DETECTION DATASET v2.0
+METADATA -  BOT DETECTION DATASET v2.0
 ======================================================================
 
-Fecha de generación: 2025-10-20 21:17:18
 Total de instancias: 1800
 Semilla aleatoria: 42
-Contexto: Tierra del Fuego, Argentina
+
 
 Columnas:
   1. user_id
@@ -24,3 +23,4 @@ Columnas:
   15. uppercase_ratio
   16. special_char_count
   17. is_bot
+
