@@ -61,8 +61,9 @@ proyecto-ml-bots-kick/
 │
 ├── data/
 │   ├── README.md                      # Documentación del dataset
-│   ├── kick_bot_dataset_v2.csv       # Dataset principal
+│   ├── kick_bot_dataset_v2.csv       # Primer dataset
 │   ├── kick_bot_dataset_v2_metadata.txt
+│   ├── kick_chat_datasetV3  # Dataset principal
 │
 ├── notebooks/
 │   ├── 01
