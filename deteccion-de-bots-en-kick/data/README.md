@@ -10,7 +10,43 @@ Esta versión mejorada del dataset incorpora:
 - ✅ **Bots sofisticados** (casos edge difíciles)
 - ✅ **Mayor realismo** en distribuciones
 
+--------------------------
+
+##  Información General
+
+| Atributo | Valor |
+|----------|-------|
+| **Nombre** | Kick Chat Bot Detection Dataset v2.0 |
+| **Instancias** | 1,800 usuarios |
+| **Variables** | 17 (15 predictoras + 1 ID + 1 objetivo) |
+| **Tipo de problema** | Clasificación binaria supervisada |
+| **Balance de clases** | 40% bots (720) / 60% humanos (1,080) |
+| **Valores faltantes** | 0 |
+| **Formato** | CSV (UTF-8) |
+
 ---
+
+## 📋 Variables del Dataset
+
+### 🔑 Variable Identificadora
+
+| Variable | Tipo | Descripción | Rango |
+|----------|------|-------------|-------|
+| `user_id` | Integer | Identificador único del usuario | 1 - 1,800 |
+
+### 🎯 Variable Objetivo
+
+| Variable | Tipo | Descripción | Valores |
+|----------|------|-------------|---------|
+| `is_bot` | Binary | Clasificación del usuario | 0 = Humano, 1 = Bot |
+
+### 📝 Variable Original (no procesada)
+
+| Variable | Tipo | Descripción | Ejemplo |
+|----------|------|-------------|---------|
+| `username` | String | Nombre de usuario en la plataforma | "triniyari", "user12345" |
+
+----------------------------------------------------------------------
 #### **Nombres de Usuario con Temática TDF**
 Aproximadamente 20% de usuarios humanos tienen nombres con referencias locales:
 ```
