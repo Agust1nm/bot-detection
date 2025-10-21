@@ -74,7 +74,8 @@ proyecto-ml-bots-kick/
 ├── src/
 │   ├── __init__.py
 │   ├── data/
-│   │   └── generate_datasetv2.py       # Script de generación
+│   │   └── generate_datasetv2.py       #Viejo Script de generación
+│   │   └── Script_v3.py       # Nuevo Script de generación
 │   
 │
 ├── docs/
@@ -129,18 +130,17 @@ proyecto-ml-bots-kick/
 14. **special_char_count**: Cantidad de caracteres especiales
 
 
+### Origen y procedimiento de adquisición
+- **Fuente:** Kick Chat Logger (repositorio open source) ejecutado localmente para monitorizar canales seleccionados de Kick.
 
-### Origen de los Datos
+- **Almacenamiento intermedio:** base SQLite local kick_scraper.db con tablas por canal (kickchat_<canal>).
 
-**Tipo**: Dataset sintético basado en observaciones reales
+- **Fecha de adquisición:** datos extraídos del kick_scraper.db generado durante las pruebas del proyecto (la fecha/hora exacta está registrada en los logs de ejecución del pipeline).
 
-El dataset fue generado mediante:
-1. **Observación** de 5 canales activos de Kick (5 días)
-2. **Modelado** de distribuciones estadísticas reales
-3. **Incorporación** de 186 nombres de usuarios reales
-4. **Generación** algorítmica con semilla fija (reproducible)
+- **Proceso de captura:** Kick Chat Logger captura eventos de chat en tiempo real y guarda los payloads; el pipeline del proyecto lee esas tablas, filtra eventos de tipo chat/message y normaliza user_id, username, content, timestamp.
 
-**Justificación**: Protección de privacidad + Control de calidad + Reproducibilidad
+- **Justificación**: Protección de privacidad + Control de calidad + Reproducibilidad
+
 
 ---
 
@@ -184,16 +184,16 @@ jupyter>=1.0.0
 #### 1. Generar el Dataset
 
 ```bash
-python src/data/generate_datasetv2.py
+python src/data/Script_v3.py    # con  el el archivo kick_scraper.db en la misma carpeta que el script
 ```
 
 Salida:
-- `data/kick_bot_dataset_v2.csv`
-- `data/kick_bot_dataset_v2_metadata.txt`
+- `data/kick_chat_datasetV3.csv`
+
 
 
 ---
 
 **Última actualización**: Octubre 2025  
-**Versión**: 2.0  
-**Estado**: En desarrollo activo 🚀
+**Versión**: 3.0  
+**Estado**: En desarrollo activo 
