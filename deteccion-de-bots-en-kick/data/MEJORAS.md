@@ -161,26 +161,9 @@ if es_humano: generic_name = 0 (siempre)
 # Bots sofisticados: 60% probabilidad
 # Humanos: 5% probabilidad (algunos usan nombres genéricos)
 ```
-✅ El modelo debe aprender combinaciones de features
-
-**Ejemplos realistas**:
-```
-Usuario: "guest2847"
-generic_name: 1
-frequency: 5 msg/hora
-url_ratio: 0.0
-→ Posiblemente humano con nombre genérico (cuenta nueva)
-
-Usuario: "Carlos_pl2"  
-generic_name: 0
-frequency: 85 msg/hora
-url_ratio: 0.75
-→ Bot sofisticado con nombre personalizado
-```
-
 ---
 
-## 📊 ESTRUCTURA DEL DATASET v2.0
+##  ESTRUCTURA DEL DATASET v2.0
 
 ### Columnas (17 total)
 
@@ -249,5 +232,21 @@ username_length       11.5     3.2     5.0    25.0
 numeric_ratio         0.18     0.22    0.00   0.80
 ```
 
+##  Origen de los Datos
+
+### Tipo
+**Dataset sintético basado en observaciones reales**
+
+### Metodología
+1. **Observación**: 5 canales de Kick durante 5 días
+2. **Modelado**: Distribuciones estadísticas de patrones reales
+3. **Incorporación**: 186 nombres de usuarios reales
+4. **Generación**: Algoritmo con semilla fija (seed=42)
+
+### Justificación
+- ✅ Protección de privacidad
+- ✅ Control de balance de clases
+- ✅ Reproducibilidad garantizada
+- ✅ Escalabilidad
 
 
