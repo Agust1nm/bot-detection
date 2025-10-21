@@ -57,39 +57,30 @@ Este modelo podría:
 proyecto-ml-bots-kick/
 │
 ├── README.md                          # Este archivo
-├── requirements.txt                   # Dependencias de Python
 ├── .gitignore                         # Archivos a ignorar
 │
 ├── data/
 │   ├── README.md                      # Documentación del dataset
 │   ├── kick_bot_dataset_v2.csv       # Dataset principal
 │   ├── kick_bot_dataset_v2_metadata.txt
-│   └── data_dictionary.pdf
 │
 ├── notebooks/
-│   ├── 01_data_generation.ipynb      # Generación del dataset
-│   ├── 02_exploratory_analysis.ipynb # Análisis exploratorio (EDA)
-│   ├── 03_preprocessing.ipynb        # Preprocesamiento
-│   └── 04_modeling.ipynb             # Entrenamiento de modelos
+│   ├── 01
+│   ├── 02
+│   ├── 03
+│   └── 04
 │
 ├── src/
 │   ├── __init__.py
 │   ├── data/
-│   │   └── generate_dataset.py       # Script de generación
-│   ├── features/
-│   │   └── feature_engineering.py
-│   ├── models/
-│   │   ├── logistic_regression.py
-│   │   ├── knn_classifier.py
-│   │   └── decision_tree.py
-│   └── utils/
-│       └── visualization.py
+│   │   └── generate_datasetv2.py       # Script de generación
+│   
 │
 ├── docs/
 │   ├── Entrega_1_Descripcion.pdf
-│   ├── Entrega_2_Dataset.pdf
-│   ├── Entrega_3_EDA.pdf
-│   └── Informe_Final.pdf
+│   ├──
+│   ├──
+│   └── 
 │
 ├── results/
 │   ├── figures/                       # Gráficos generados
