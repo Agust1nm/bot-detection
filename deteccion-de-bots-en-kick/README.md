@@ -100,10 +100,9 @@ proyecto-ml-bots-kick/
 
 | Atributo | Valor |
 |----------|-------|
-| **Total de instancias** | 1,800 usuarios |
+| **Total de instancias** | 2.358 usuarios |
 | **Características** | 17 variables |
 | **Variable objetivo** | `is_bot` (0=Humano, 1=Bot) |
-| **Balance** | 40% bots / 60% humanos |
 | **Valores faltantes** | 0 |
 | **Formato** | CSV (UTF-8) |
 
