@@ -5,7 +5,6 @@
 - **Nombre del Dataset**: Kick Chat Bot Detection Dataset
 - **Versión**: 1.0
 - **Fecha de Creación**: Octubre 2025
-- **Tipo de Problema**: Clasificación Binaria
 - **Dominio**: Detección de comportamiento automatizado en plataformas de streaming
 
 ---
