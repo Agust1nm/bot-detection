@@ -1,4 +1,4 @@
-# 📖 Diccionario de Datos - Kick Bot Detection Dataset v2.0
+#  Diccionario de Datos - Bot Detection Dataset v2.0
 
 **Proyecto**: Detección de Bots en Plataformas de Streaming  
 **Versión**: 2.0  
@@ -6,7 +6,7 @@
 
 ---
 
-## 📊 Información General
+##  Información General
 
 | Atributo | Valor |
 |----------|-------|
@@ -20,21 +20,21 @@
 
 ---
 
-## 📋 Variables del Dataset
+##  Variables del Dataset
 
-### 🔑 Variable Identificadora
+###  Variable Identificadora
 
 | Variable | Tipo | Descripción | Rango |
 |----------|------|-------------|-------|
 | `user_id` | Integer | Identificador único del usuario | 1 - 1,800 |
 
-### 🎯 Variable Objetivo
+###  Variable Objetivo
 
 | Variable | Tipo | Descripción | Valores |
 |----------|------|-------------|---------|
 | `is_bot` | Binary | Clasificación del usuario | 0 = Humano, 1 = Bot |
 
-### 📝 Variable Original (no procesada)
+###  Variable Original (no procesada)
 
 | Variable | Tipo | Descripción | Ejemplo |
 |----------|------|-------------|---------|
@@ -42,7 +42,7 @@
 
 ---
 
-## 🎯 Criterios de Etiquetado
+##  Criterios de Etiquetado
 
 ### BOT (is_bot = 1)
 Usuario etiquetado como bot si cumple **≥3 criterios**:
@@ -67,7 +67,7 @@ Usuario etiquetado como humano si cumple **≥3 criterios**:
 ---
 ---
 
-## 📁 Origen de los Datos
+##  Origen de los Datos
 
 ### Tipo
 **Dataset sintético basado en observaciones reales**
@@ -86,7 +86,7 @@ Usuario etiquetado como humano si cumple **≥3 criterios**:
 
 ---
 
-## 🔍 Casos Edge Incluidos
+##  Casos Edge Incluidos
 
 ### Bots Sofisticados (30% de bots)
 - Frecuencia: 25-45 msg/hora (más baja)
@@ -105,11 +105,10 @@ Usuario etiquetado como humano si cumple **≥3 criterios**:
 
 ---
 
-## 📞 Referencias
+##  Referencias
 
-**Código de generación**: `src/data/generate_dataset.py`  
+**Código de generación**: `src/data/generate_datasetv2.py`  
 **Documentación completa**: `README.md`  
 
 ---
 
-**Versión**: 2.0 | **Fecha**: Octubre 2025 | **Semilla**: 42
