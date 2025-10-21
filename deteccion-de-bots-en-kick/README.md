@@ -170,11 +170,10 @@ cd proyecto-ml-bots-kick
 
 # Crear entorno virtual (recomendado)
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
 
 # Instalar dependencias
-pip install -r requirements.txt
+
 ```
 
 ### Dependencias Principales
@@ -194,7 +193,7 @@ jupyter>=1.0.0
 #### 1. Generar el Dataset
 
 ```bash
-python src/data/generate_dataset.py
+python src/data/generate_datasetv22.py
 ```
 
 Salida:
