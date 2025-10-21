@@ -26,21 +26,21 @@ Esta versión mejorada del dataset incorpora:
 
 ---
 
-## 📋 Variables del Dataset
+##  Variables del Dataset
 
-### 🔑 Variable Identificadora
+###  Variable Identificadora
 
 | Variable | Tipo | Descripción | Rango |
 |----------|------|-------------|-------|
 | `user_id` | Integer | Identificador único del usuario | 1 - 1,800 |
 
-### 🎯 Variable Objetivo
+###  Variable Objetivo
 
 | Variable | Tipo | Descripción | Valores |
 |----------|------|-------------|---------|
 | `is_bot` | Binary | Clasificación del usuario | 0 = Humano, 1 = Bot |
 
-### 📝 Variable Original (no procesada)
+###  Variable Original (no procesada)
 
 | Variable | Tipo | Descripción | Ejemplo |
 |----------|------|-------------|---------|
