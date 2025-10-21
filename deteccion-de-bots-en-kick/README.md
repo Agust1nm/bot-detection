@@ -193,7 +193,7 @@ jupyter>=1.0.0
 #### 1. Generar el Dataset
 
 ```bash
-python src/data/generate_datasetv22.py
+python src/data/generate_datasetv2.py
 ```
 
 Salida:
