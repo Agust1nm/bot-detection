@@ -3,7 +3,7 @@
 
 #  Dataset: Kick Chat Bot Detection
 
-**Archivo:** `data/processed/Kick_Chat_Bot_Detection_dataset_random_time.csv`
+**Archivo:** `data/processed/kick_chat_datasetV3.csv`
 **Objetivo:** Clasificación binaria — `is_bot`: `1 = bot`, `0 = humano`
 **Shape:** 2.358 instancias × 17 columnas
 
