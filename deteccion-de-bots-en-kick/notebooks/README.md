@@ -71,3 +71,8 @@ Crosstab heurística vs `is_bot` mostró: todos los casos con `heuristic_count >
   - Solo 1 bot en TP; no hubo FP sobre humanos.
 - **Discrepancias**: 456 instancias en las que `is_bot` difiere de `cluster_mapped` (ejemplos listados en notebook).
 - **Análisis de medias** por cluster e `is_bot` muestra que `repetition_ratio` y `frequency` se comportan distinto entre etiquetas y clusters.
+
+### Interpretación conjunta y conclusiones operativas
+
+- El modelo supervisado (Regresión Logística) obtiene métricas excelentes frente a la etiqueta heurística; sin embargo, esto no prueba que la heurística sea correcta, solo que el modelo aprende a reproducirla.
+- La baja concordancia entre KMeans y la heurística (ARI/NMI casi 0) indica que la partición natural de los datos no respalda la etiqueta heurística como separación clara en el espacio de features usado.
