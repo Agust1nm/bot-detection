@@ -4,7 +4,7 @@ Dataset a nivel de usuario para detección de bots extraído de logs de chat de 
 
 **Archivo:** `data/processed/kick_chat_datasetV3.csv`  
 **Shape:** 2.357 filas × 17 columnas  
-**Tarea:** clasificación binaria (columna `is_bot`: 1 = bot, 0 = humano)
+ clasificación binaria (columna `is_bot`: 1 = bot, 0 = humano)
 
 ---
 
