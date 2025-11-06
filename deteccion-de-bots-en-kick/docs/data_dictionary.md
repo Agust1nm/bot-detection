@@ -7,7 +7,7 @@
 
 | Atributo              | Valor |
 |-----------------------|-------|
-| **Nombre**            | Kick Chat Bot Detection Dataset v3.0 |
+| **Nombre**            | Chat Bot Detection Dataset v3.0 |
 | **Instancias**        | 2.357 usuarios |
 | **Variables**         | 17 (15 predictoras + 1 ID + 1 objetivo) |
 | **Tipo de problema**  | Clasificación binaria supervisada |
