@@ -1,107 +1,113 @@
-#  Detección Automática de Bots en Plataformas de Streaming
-
-## Proyecto de Aprendizaje Automático
----
-s
-##  Tabla de Contenidos
-
-1. [Descripción del Proyecto](#-descripción-del-proyecto)
-2. [Contexto y Relevancia](#-contexto-y-relevancia)
-3. [Estructura del Repositorio](#-estructura-del-repositorio)
-4. [Dataset](#-dataset)
-5. [Instalación y Uso](#-instalación-y-uso)
-
+# Detección de Bots  – Proyecto de Aprendizaje Automático 
 
 ---
 
 ##  Descripción del Proyecto
+Este proyecto aborda la detección automática de bots en el chat de la plataforma de streaming **Kick**, utilizando técnicas de **aprendizaje automático supervisado**.
 
-Este proyecto desarrolla un **sistema de clasificación automática** capaz de distinguir entre usuarios humanos reales y bots automatizados en plataformas de streaming en vivo.
+Los bots distorsionan métricas de audiencia, generan fraude publicitario, sobrecargan servidores y afectan la competencia justa entre streamers.
 
-### Objetivos
+---
 
-#### Objetivo General
-Desarrollar un modelo de aprendizaje automático capaz de clasificar usuarios como bots automatizados o usuarios humanos reales, basándose en características extraíbles de sus patrones de comportamiento en el chat.
+##  Objetivos
 
-#### Objetivos Específicos
-1. Construir un dataset etiquetado con al menos 1,800 instancias balanceadas
-2. Identificar características discriminativas de comportamiento
-3. Entrenar y evaluar múltiples modelos de clasificación
+###  General
+Desarrollar un modelo para clasificar usuarios como bots o humanos basado en patrones de comportamiento del chat.
+
+###  Específicos
+- Construir un dataset etiquetado con al menos **1.000 instancias balanceadas**
+- Extraer features discriminativas (frecuencia de mensajes, URLs, repetición, etc.)
+- Evaluar modelos supervisados y validar con clustering no supervisado
+
+🟢 **Modelo seleccionado**: Árbol de Decisión  
+ **F1-Score = 1.000 en test**  
+ Regla destacada: `url_ratio > 0.6`
+
+---
+
+## 📁 Contexto del Dataset
+
+## Dataset
+
+- **Archivo:** `data/processed/kick_chat_datasetV3.csv`
+- **Instancias:** 2.357 usuarios
+- **Clases:** 1.414 humanos (60%), 943 bots (40%)
+- **Features:** 14 (frecuencia, URLs, repetición, longitud, etc.)
+- **Etiquetado:** Heurística validada con K-Means (97.8% concordancia)
+
+> [Ver Diccionario de Datos](docs/data_dictionary.md)
+
+---
+
+- Dataset basado en logs reales de chats en Kick
+- Enriquecido con features de actividad y nombres de usuario  
+
+**Origen:**  
+Logs capturados con Kick Chat Logger (open-source), almacenados en `kick_scraper.db`.
+
+**Preprocesamiento:**
+- Filtrado de eventos de chat
+- Cálculo de features
+- Asignación aleatoria de `time_in_channel`
+- Etiquetado heurístico validado con **K-Means (ARI = 0.912)**
+
+
+**Visualizaciones clave:**
+- PCA (separación clara)
+- Matriz de correlación
 
 
 ---
 
-## 🌎 Contexto y Relevancia
-
-### Problema Global
-La industria del streaming en vivo está valorada en más de **$10 mil millones** globalmente. Los bots representan una amenaza significativa que:
-- 💰 Distorsiona métricas económicas
-- 📊 Genera fraude publicitario  
-- 👥 Afecta la experiencia de usuarios reales
-- 🔒 Reduce la confianza de marcas e inversores
-
-
-
-####  Aplicabilidad Práctica
-Este modelo podría:
-1. Proteger streamers 
-2. Apoyar a comunidades gaming locales 
-3. Servir como base para políticas de moderación regionales
-4. Contribuir al desarrollo tecnológico 
-
----
-
-##  Estructura del Repositorio
-
-```
+## 📂 Estructura del Repositorio
 deteccion-de-bots-en-kick/
 ├── data/
-│   ├── external/
-│   │   └── .gitkeep
-│   ├── interim/
-│   │   ├── .gitkeep
-│   │   ├── dataset_1.csv
-│   │   └── kick_bot_dataset_v2_metadata.txt
-│   ├── processed/
-│   │   ├── .gitkeep
-│   │   └── kick_chat_datasetV3.csv
-│   └── raw/
-│       ├── .ipynb_checkpoints/
-│       ├── .gitkeep
-│       ├── kick_bot_dataset_v2.csv
-│       ├── kick_chat_bot_datasetV1.csv
-│       ├── kick_scraper.db
-│       ├── InfoDataserV2.md
-│       └── README.md
+│ ├── external/
+│ │ └── .gitkeep
+│ ├── interim/
+│ │ ├── .gitkeep
+│ │ ├── dataset_1.csv
+│ │ └── kick_bot_dataset_v2_metadata.txt
+│ ├── processed/
+│ │ ├── .gitkeep
+│ │ └── kick_chat_datasetV3.csv
+│ └── raw/
+│ ├── .ipynb_checkpoints/
+│ ├── .gitkeep
+│ ├── kick_bot_dataset_v2.csv
+│ ├── kick_chat_bot_datasetV1.csv
+│ ├── kick_scraper.db
+│ ├── InfoDataserV2.md
+│ └── README.md
 ├── docs/
-│   ├── docs/
-│   │   └── .gitkeep
-│   ├── data_dictionary.md
-│   └── mkdocs.yml
+│ ├── docs/
+│ │ └── .gitkeep
+│ ├── data_dictionary.md
+│ └── mkdocs.yml
 ├── kick-bot-detection/
-│   └── modeling/
-│       ├── init.py
-│       ├── config.py
-│       ├── dataset.py
-│       ├── features.py
-│       └── plots.py
+│ └── modeling/
+│ ├── init.py
+│ ├── config.py
+│ ├── dataset.py
+│ ├── features.py
+│ └── plots.py
 ├── models/
-│   └── .gitkeep
+│ └── .gitkeep
 ├── notebooks/
-│   └── EDA/
-│       └── .gitkeep
+│ └── EDA/
+│ └── .gitkeep
 ├── references/
-│   └── .gitkeep
+│ └── .gitkeep
 ├── reports/
-│   └── figures/
-│       └── .gitkeep
+│ └── figures/
+│ └── .gitkeep
 ├── src/
-│   └── data/
-│       ├── generate_dataset.py
-│       ├── generate_datasetv2.py
-│       └── scrpitv4.py
+│ └── data/
+│ ├── generate_dataset.py
+│ ├── generate_datasetv2.py
+│ └── scrpitv4.py
 ├── tests/
-│   └── test_data.py
+│ └── test_data.py
 ├── .gitignore
 ├── LICENSE
 ├── Makefile
@@ -110,109 +116,85 @@ deteccion-de-bots-en-kick/
 └── README.md
 
 
-```
+---
+
+## ✅ Resultados Principales
 
 ---
 
-##  Dataset
+### 🔹 Validación No Supervisada – *K-Means*
 
-### Características Generales
+| Métrica | Valor |
+|--------|------|
+| Instancias | 2.357 |
+| Humanos | 1.414 |
+| Bots | 943 |
+| ARI | **0.912** |
+| NMI | 0.864 |
+| Concordancia | 97.75% |
+| Discrepancias | 53 (2.2%) |
 
-| Atributo | Valor |
-|----------|-------|
-| **Total de instancias** | 2.358 usuarios |
-| **Características** | 17 variables |
-| **Variable objetivo** | `is_bot` (0=Humano, 1=Bot) |
-| **Valores faltantes** | 0 |
-| **Formato** | CSV (UTF-8) |
-
-### Variables Principales
-
-#### Variables de Comportamiento
-1. **frequency**: Mensajes por hora (2-200)
-2. **avg_message_length**: Longitud promedio de mensajes (10-120 caracteres)
-3. **total_messages**: Total de mensajes enviados (3-300)
-4. **url_ratio**: Proporción de mensajes con URLs (0.0-1.0)
-5. **repetition_ratio**: Proporción de mensajes repetidos (0.0-1.0)
-6. **time_in_channel**: Tiempo de observación (5-200 minutos)
-
-#### Variables Categóricas
-7. **suspicious_links**: Presencia de enlaces sospechosos (0/1)
-8. **generic_name**: Patrón de nombre genérico (0/1)
-
-#### Features Derivadas del Username
-9. **username_length**: Longitud del nombre
-10. **has_numbers**: Contiene dígitos (0/1)
-11. **has_underscore**: Contiene guiones bajos (0/1)
-12. **numeric_ratio**: Proporción de dígitos (0.0-1.0)
-13. **uppercase_ratio**: Proporción de mayúsculas (0.0-1.0)
-14. **special_char_count**: Cantidad de caracteres especiales
-
-
-### Origen y procedimiento de adquisición
-- **Fuente:** Kick Chat Logger (repositorio open source) ejecutado localmente para monitorizar canales seleccionados de Kick.
-
-- **Almacenamiento intermedio:** base SQLite local kick_scraper.db con tablas por canal (kickchat_<canal>).
-
-- **Fecha de adquisición:** datos extraídos del kick_scraper.db generado durante las pruebas del proyecto (la fecha/hora exacta está registrada en los logs de ejecución del pipeline).
-
-- **Proceso de captura:** Kick Chat Logger captura eventos de chat en tiempo real y guarda los payloads; el pipeline del proyecto lee esas tablas, filtra eventos de tipo chat/message y normaliza user_id, username, content, timestamp.
-
-- **Justificación**: Protección de privacidad + Control de calidad + Reproducibilidad
-
+**Matriz Resumen**
+- 1.361 concordancias en humanos
+- 0 falsos negativos
+- 943 verdaderos positivos
+- 53 discrepancias
 
 ---
 
-##  Instalación y Uso
+### 🔹 Modelado Supervisado
 
-### Requisitos Previos
+**Train/Test:** 1.885 / 472 (80/20)
 
-- Python 3.8+
-- pip (gestor de paquetes)
-- Git
-
-### Instalación
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/proyecto-ml-bots-kick.git
-cd proyecto-ml-bots-kick
-
-# Crear entorno virtual (recomendado)
-python -m venv venv
-venv\Scripts\activate     # Windows
-
-# Instalar dependencias
-
-```
-
-### Dependencias Principales
-
-```
-pandas>=1.5.0
-numpy>=1.23.0
-scikit-learn>=1.2.0
-matplotlib>=3.6.0
-seaborn>=0.12.0
-scipy>=1.10.0
-jupyter>=1.0.0
-```
-
-### Uso
-
-#### 1. Generar el Dataset
-
-```bash
-python src/data/Script_v3.py    # con  el el archivo kick_scraper.db en la misma carpeta que el script
-```
-
-Salida:
-- `data/kick_chat_datasetV3.csv`
+| Modelo | Accuracy | F1-Score | ROC AUC |
+|--------|---------|---------|---------|
+| Árbol de Decisión | 1.000 | 1.000 | 1.000 |
+| KNN (k=5) | 0.998 | 0.998 | 1.000 |
+| Regresión Logística | 0.998 | 0.998 | 0.999 |
 
 
+🏆 **Modelo Ganador → Árbol de Decisión**  
+✅ 0 errores en test  
+
+> **Feature + Importante:** `url_ratio`  
+- 99.3% importancia (Árbol)
+- 5.21 (LogReg)
 
 ---
 
-**Última actualización**: Octubre 2025  
-**Versión**: 3.0  
-**Estado**: En desarrollo activo 
+##  Conclusiones
+
+- Rendimiento perfecto permite mitigar fraude, spam y sobrecarga en Kick
+- Regla interpretable:
+if url_ratio > 0.6 → bot
+
+---
+
+## ▶️ Instrucciones de Uso
+
+
+
+
+
+Herramientas:
+
+Scikit-Learn
+
+Pandas
+
+Matplotlib
+
+Seaborn
+
+Dataset origen: Kick Chat Logger (GitHub)
+
+Documentación:
+docs/data_dictionary.md
+
+Notebook principal:
+notebooks/ModeloFinal.ipynb
+
+Licencia: MIT
+
+
+¡Gracias por revisar el proyecto!
