@@ -2,7 +2,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = deteccion-de-bots-en-kick
+PROJECT_NAME = deteccion-de-bots
 PYTHON_VERSION = 3.10
 PYTHON_INTERPRETER = python
 
