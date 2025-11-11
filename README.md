@@ -63,44 +63,7 @@ Dataset basado en:
 - Matriz de correlación
 
 ---
-bot-detection/
-├── data/                      ← CARPETA PROTEGIDA (en .gitignore)
-│   ├── raw/                   ← Datos originales, inmutables
-│   ├── interim/               ← Datos intermedios (limpios pero no finales)
-│   ├── processed/            ← Datos finales listos para modelado
-│   └── external/             ← Datos de fuentes externas
 
-├── notebooks/                 ← Jupyter notebooks (exploración, prototipos)
-│   ├── exploratory/           ← Notebooks desordenados/exploratorios
-│   └── final/                 ← Notebooks "limpios" o presentaciones (opcional)
-
-├── src/                       ← Código fuente (LO MÁS IMPORTANTE)
-│   ├── __init__.py
-
-
-├── models/                    ← Modelos entrenados (serializados: pickle, joblib, etc.)
-│   ├── model_v1.pkl
-│   └── model_v2_xgboost.joblib
-
-├── reports/                   ← Reportes finales (HTML, PDF, etc.)
-│   ├── figures/               ← Gráficos generados
-│   └── reporte_final.pdf
-
-├── tests/                     ← Tests unitarios (pytest)
-│   ├── test_data.py
-│   ├── test_features.py
-│   └── test_models.py
-
-├── docs/                      ← Documentación adicional (opcional)
-│   └── comandos.md
-
-└── references/                ← Papers, manuales, links útiles
-├── README.md                  ← Descripción del proyecto, cómo instalar, ejecutar, etc.
-├── LICENSE                    ← Licencia del proyecto
-├── requirements.txt           ← Dependencias pip (o environment.yml si usas conda)
-├── setup.py                   ← Para hacer el código instalable (opcional pero recomendado)
-├── .gitignore
-├── .env.example               ← Ejemplo de variables de entorno
 ## ✅ Resultados Principales
 
 ###  Validación No Supervisada – K-Means
