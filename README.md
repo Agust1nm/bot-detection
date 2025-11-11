@@ -64,6 +64,45 @@ Dataset basado en:
 
 ---
 
+## Estructura del proyecto
+
+```bash
+deteccion-de-bots-en-kick/
+├── data/
+│   ├── external/          # Datos de terceros
+│   ├── interim/           # Datos intermedios (proceso de limpieza)
+│   ├── processed/        # Datasets finales listos para modelado
+│   ├── raw/
+│   │   ├── .gitkeep
+│   │   └── kick_chat_datasetV3.csv    # Dataset original (inmutable)
+│   └── InfoDataserV2.md
+├── docs/
+│   ├── .gitkeep
+│   └── data_dictionary.md             # Diccionario de datos
+├── models/                                
+├── notebooks/
+│   ├── EDA/
+│   │   ├── datasetinfo.ipynb          # informacion del dataset
+│   │   ├── ModeloFinal.ipynb          # Modelos entrenados (se generarán)
+│   │   └── Validacion.ipynb           # Validacion de etiquetas
+│   └── README.md
+├── references/                            # Papers, links y material de referencia
+├── reports/                               # Reportes finales, figuras (se generarán)
+├── src/
+│   └── data/
+│       ├── Info.md
+│       ├── generate_dataset.py            # Scripts de prueba 1
+│       ├── generate_datasetv2.py          # Script de prueba 2
+│       └── scrpitv4.py                    # Script principal de procesamiento
+├── tests/                                
+├── .gitignore
+├── LICENSE
+├── Makefile
+├── environment.yml                        
+├── pyproject.toml                        
+└── README.md
+```
+
 ## ✅ Resultados Principales
 
 ###  Validación No Supervisada – K-Means
